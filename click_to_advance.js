@@ -27,21 +27,22 @@ function ClickToAdvance(frame_images, target_div, x, y) {
      * you can uncomment the line below to add this object as the event listener
      * for clicks on the image.
      */
+
     this.handleEvent = function(  ) {
-        debugger;
          if ( this.frame >= this.images.length - 1 ) {
             return;
          } else {
              this.frame += 1;
              this.img.src = this.images[this.frame];
          }
-         return;
+        console.log(this);
+        return;
      }
      this.img.addEventListener("click", this);
 }
 
-for(var i = 0; i < 5; i++) {
-    var x = 150 * i;
-    var y = Math.floor(Math.random() * 500);
-    var flower = new ClickToAdvance(flower_images, container_div, x, y);
+for(let i = 0; i < 5; i++) {
+    let x = 150 * i;
+    let y = Math.floor(Math.random() * 500);
+    let flower = new ClickToAdvance(flower_images, container_div, x, y);
 }
